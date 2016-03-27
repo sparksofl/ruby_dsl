@@ -10,6 +10,10 @@ class Caesar
   end
 
   def decrypt(string)
-    puts string.tr(@encrypt, @decrypt)
+    string.tr(@encrypt, @decrypt)
+  end
+
+  def method_missing(*args)
+    raise "Unknown command #{args[0]}"
   end
 end
